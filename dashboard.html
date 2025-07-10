@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPTAG AI - Anomaly Analysis</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <img src="./haptag_logo.png" alt="HAPTAG AI Logo" class="sidebar-logo">
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="home.html"><i class="ph-fill ph-house"></i><span>Home</span></a></li>
+                <li><a href="dashboard.html" class="active"><i class="ph-fill ph-chart-line-up"></i><span>Dashboard</span></a></li>
+                <li><a href="index.html"><i class="ph-fill ph-plus-circle"></i><span>New Analysis</span></a></li>
+                <li><a href="#"><i class="ph-fill ph-gear"></i><span>Settings</span></a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <button id="sidebar-toggle" aria-label="Toggle Sidebar">
+                    <i class="ph ph-caret-double-left"></i>
+                </button>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="page-header">
+                <div class="header-left"><h1>Analysis for session_id_49</h1></div>
+                <div class="header-right">
+                     <div class="user-profile">
+                        <button class="user-profile-button" aria-label="User menu"><span>SA</span></button>
+                        <div class="user-profile-menu"><a href="#">Profile</a><a href="login.html">Logout</a></div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="view-switcher-container">
+                <div class="analytical-lens-switcher">
+                    <button class="lens-tab active" data-view="dashboard-view"><i class="ph-fill ph-squares-four"></i> Dashboard</button>
+                    <button class="lens-tab" data-view="advanced-view"><i class="ph-fill ph-magic-wand"></i> Advanced</button>
+                </div>
+            </div>
+
+            <div id="dashboard-view" class="view active">
+                 <section class="kpi-grid">
+                    <div class="card kpi-card accent-purple"><span class="kpi-title">Detected Anomalies</span><div class="kpi-value"><i class="ph-fill ph-bug"></i> 17</div></div>
+                    <div class="card kpi-card accent-red"><span class="kpi-title">Critical Errors</span><div class="kpi-value"><i class="ph-fill ph-fire"></i> 4</div></div>
+                    <div class="card kpi-card accent-blue"><span class="kpi-title">Affected Components</span><div class="kpi-value"><i class="ph-fill ph-crosshair"></i> 3</div></div>
+                    <div class="card kpi-card accent-amber"><span class="kpi-title">System Health Score</span><div class="kpi-value"><i class="ph-fill ph-gauge"></i> 68%</div></div>
+                </section>
+                
+                <section class="card">
+                    <div class="card-header">
+                        <h2>Anomaly Log</h2>
+                    </div>
+                    <div class="table-container">
+                        <table class="anomaly-table">
+                            <thead>
+                                <tr>
+                                    <th>Status</th><th>Timestamp</th><th>Level</th><th>Component</th><th>Content</th><th>Confidence</th><th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="badge status-new">New Detection</span></td>
+                                    <td>2016-09-28 04:30:31</td>
+                                    <td><span class="badge level-critical">ERROR</span></td>
+                                    <td>CBS</td>
+                                    <td>Failed to start standard sample upload. HRESULT = 0x80004005</td>
+                                    <td>0.95</td>
+                                    <td><button class="icon-button" aria-label="View Context"><i class="ph ph-magnifying-glass"></i></button></td>
+                                </tr>
+                                <tr class="context-row" style="display: none;">
+                                    <td colspan="7"><pre class="log-context">[2016-09-28 04:30:30] [Info] Initializing upload sequence...
+[2016-09-28 04:30:31] [Error] Failed to start standard sample upload. HRESULT = 0x80004005, E_FAIL
+[2016-09-28 04:30:31] [Info] Aborting sequence due to critical failure...</pre></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge status-known">Known Issue</span></td>
+                                    <td>2016-09-28 04:30:32</td>
+                                    <td><span class="badge level-warning">WARNING</span></td>
+                                    <td>SQM</td>
+                                    <td>SQM upload failed.</td>
+                                    <td>0.81</td>
+                                    <td><button class="icon-button" aria-label="View Context"><i class="ph ph-magnifying-glass"></i></button></td>
+                                </tr>
+                                <tr class="context-row" style="display: none;">
+                                    <td colspan="7"><pre class="log-context">[2016-09-28 04:30:31] [Info] Starting SQM data compilation...
+[2016-09-28 04:30:32] [Warning] SQM upload failed. Endpoint not reachable.
+[2016-09-28 04:30:33] [Info] Will retry in 10 minutes...</pre></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                 <section class="explanation-grid">
+                    <div class="explanation-details">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Explanation generated by LLM</h2>
+                            </div>
+                            <div class="accordion">
+                                <div class="accordion-item">
+                                    <button class="accordion-header active">
+                                        <i class="ph-fill ph-info"></i>
+                                        Overall Summary
+                                        <i class="ph ph-caret-down"></i>
+                                    </button>
+                                    <div class="accordion-content" style="max-height: 1000px;">
+                                        <div class="accordion-content-inner">
+                                        <p>The system encountered significant issues with manifest parsing and package handling, potentially leading to failed updates and incomplete telemetry data uploads.</p>
+                                    </div>  </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        <i class="ph-fill ph-bug"></i>
+                                        Key Anomaly Groups
+                                        <i class="ph ph-caret-down"></i>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <div class="accordion-content-inner">
+                                        <h4>Manifest Parsing Errors:</h4>
+                                        <p>The servicing stack encountered issues reading update manifest files, indicated by the <strong>0x800f080c</strong> error code.</p>
+                                        <h4>Package Handling Failures:</h4>
+                                        <p>The system failed to open a package, as indicated by the <strong>0x800f0805</strong> error code, suggesting invalid or corrupt package data.</p>
+                                    </div></div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        <i class="ph-fill ph-shield-warning"></i>
+                                        Potential Impact
+                                        <i class="ph ph-caret-down"></i>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <div class="accordion-content-inner">
+                                            <p>These errors likely result in incomplete or failed Windows updates, which could leave the system vulnerable or lacking new features. The inability to upload telemetry data means diagnostic information about these failures is not being sent to Microsoft, hindering further troubleshooting.</p>
+                                        </div>                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="explanation-actions">
+                        <div class="card">
+                             <div class="card-header">
+                                <h2><i class="ph-fill ph-list-checks"></i> Recommended Actions</h2>
+                            </div>
+                            <div class="explanation-content">
+                                <ul class="action-checklist">
+                                    <li><label><input type="checkbox">Run the System File Checker tool (sfc /scannow).</label></li>
+                                    <li><label><input type="checkbox">Use the DISM tool to repair the Windows Component Store.</label></li>
+                                    <li><label><input type="checkbox">Clear the C:\\Windows\\SoftwareDistribution\\Download folder.</label></li>
+                                    <li><label><input type="checkbox" checked>Verify network connectivity and permissions.</label></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="card">
+                     <div class="feedback-form">
+                        <span class="feedback-question">Was this anomaly detection correct?</span>
+                        <div class="feedback-actions">
+                            <button class="button-feedback yes"><i class="ph ph-thumbs-up"></i> Yes</button>
+                            <button class="button-feedback no"><i class="ph ph-thumbs-down"></i> No</button>
+                        </div>
+                        <textarea placeholder="Add analyst comment... (optional)"></textarea>
+                    </div>
+                </section>
+            </div>
+            <div id="advanced-view" class="view" style="display: none;">
+                <section class="card">
+                    <div class="card-header">
+                        <h2>Natural Language Query</h2>
+                    </div>
+                    <div class="query-interface">
+                        <i class="ph ph-magnifying-glass"></i>
+                        <input type="text" placeholder="Ask about this session... (e.g., 'Show me all critical anomalies related to authentication')">
+                    </div>
+                </section>
+                <div class="advanced-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Component Impact Map (Sankey Diagram)</h3>
+                        </div>
+                        <div class="placeholder-viz">
+                            <i class="ph ph-graph"></i>
+                            <span>Sankey Diagram Placeholder</span>
+                        </div>
+                    </div>
+                     <div class="card">
+                        <div class="card-header">
+                            <h3>Timeline Heatmap</h3>
+                        </div>
+                        <div class="placeholder-viz">
+                             <i class="ph ph-table"></i>
+                             <span>Heatmap Placeholder</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

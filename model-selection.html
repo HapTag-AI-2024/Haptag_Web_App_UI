@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPTAG AI - Select Model</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <img src="./haptag_logo.png" alt="HAPTAG AI Logo" class="sidebar-logo">
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#"><i class="ph-fill ph-house"></i><span>Home</span></a></li>
+                <li><a href="dashboard.html"><i class="ph-fill ph-chart-line-up"></i><span>Dashboard</span></a></li>
+                <li><a href="index.html" class="active"><i class="ph-fill ph-plus-circle"></i><span>New Analysis</span></a></li>
+                <li><a href="#"><i class="ph-fill ph-gear"></i><span>Settings</span></a></li>
+            </ul>
+             <div class="sidebar-footer">
+                <button id="sidebar-toggle" aria-label="Toggle Sidebar">
+                    <i class="ph ph-caret-double-left"></i>
+                </button>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="page-header">
+                <div class="header-left">
+                    <h1>Start New Analysis Session</h1>
+                </div>
+            </header>
+
+            <div class="flow-step">
+                <div class="step-indicator">Step 2 of 2: Select Detection Model</div>
+                
+                <div class="model-selection-container">
+                    <div class="card model-card">
+                        <h3>GPT-based Detection Models</h3>
+                        <p>Transformer-style models fine-tuned for log data.</p>
+                        <div class="model-option">
+                            <input type="radio" id="loggpt" name="model" value="loggpt">
+                            <label for="loggpt">
+                                <strong>LogGPT</strong>
+                                <span>Captures intricate sequential patterns, preserving natural log flow.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="card model-card">
+                        <h3>LLM-based Detection</h3>
+                        <p>Cloud-hosted large models for advanced reasoning.</p>
+                        <div class="model-option">
+                            <input type="radio" id="gpt4o" name="model" value="gpt4o">
+                            <label for="gpt4o">
+                                <strong>GPT-4o</strong>
+                                <span>Captures subtle anomalies hidden inside log content, beyond surface-level structure.</span>
+                            </label>
+                        </div>
+                         <div class="model-option">
+                            <input type="radio" id="gemini" name="model" value="gemini" checked>
+                            <label for="gemini">
+                                <strong>Gemini 1.5 Pro</strong>
+                                <span>Captures subtle anomalies hidden inside log content. Handles long logs.</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="page-actions">
+                    <a href="index.html" class="button-secondary"><i class="ph ph-arrow-left"></i> Back to Upload</a>
+                    <button id="detect-anomalies-btn" class="button-primary">Detect Anomalies <i class="ph ph-magic-wand"></i></button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

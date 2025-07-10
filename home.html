@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPTAG AI - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header"><img src="./haptag_logo.png" alt="HAPTAG AI Logo" class="sidebar-logo"></div>
+            <ul class="sidebar-menu">
+                <li><a href="home.html" class="active"><i class="ph-fill ph-house"></i><span>Home</span></a></li>
+                <li><a href="dashboard.html"><i class="ph-fill ph-chart-line-up"></i><span>Dashboard</span></a></li>
+                <li><a href="index.html"><i class="ph-fill ph-plus-circle"></i><span>New Analysis</span></a></li>
+                <li><a href="#"><i class="ph-fill ph-gear"></i><span>Settings</span></a></li>
+            </ul>
+            <div class="sidebar-footer"><button id="sidebar-toggle" aria-label="Toggle Sidebar"><i class="ph ph-caret-double-left"></i></button></div>
+        </nav>
+
+        <main class="main-content">
+            <header class="page-header">
+                <div class="header-left"><h1>Dashboard</h1></div>
+                <div class="header-right">
+                    <div class="user-profile">
+                        <button class="user-profile-button" aria-label="User menu"><span>SA</span></button>
+                        <div class="user-profile-menu"><a href="#">Profile</a><a href="login.html">Logout</a></div>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="page-actions-center">
+                <a href="index.html" class="button-primary"><i class="ph-fill ph-plus-circle"></i> Start New Analysis</a>
+            </div>
+
+            <section class="kpi-grid">
+                <div class="card kpi-card"><span class="kpi-title">Total Sessions</span><div class="kpi-value">28</div></div>
+                <div class="card kpi-card"><span class="kpi-title">Avg. Health Score</span><div class="kpi-value">83%</div></div>
+                <div class="card kpi-card"><span class="kpi-title">Anomalies (7d)</span><div class="kpi-value">112</div></div>
+            </section>
+
+            <div class="home-grid">
+                <div class="session-list">
+                    <h2>Recent Analysis Sessions</h2>
+                    <div class="card session-card">
+                        <div>
+                            <h3>Session: session_id_49</h3>
+                            <p>Log File: `prod_system_logs_2025-07-07.log`</p>
+                        </div>
+                        <div class="session-meta">
+                            <span class="health-score score-bad">Health: 68%</span>
+                            <a href="dashboard.html" class="button-secondary">View Report</a>
+                        </div>
+                    </div>
+                    <div class="card session-card">
+                        <div>
+                            <h3>Session: session_id_48</h3>
+                            <p>Log File: `staging_api_crash.log`</p>
+                        </div>
+                        <div class="session-meta">
+                            <span class="health-score score-ok">Health: 85%</span>
+                            <a href="#" class="button-secondary">View Report</a>
+                        </div>
+                    </div>
+                    <div class="card session-card">
+                        <div>
+                            <h3>Session: session_id_47</h3>
+                            <p>Log File: `auth_service_errors.csv`</p>
+                        </div>
+                        <div class="session-meta">
+                            <span class="health-score score-good">Health: 97%</span>
+                            <a href="#" class="button-secondary">View Report</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="activity-chart">
+                    <div class="card">
+                        <div class="card-header"><h2>Weekly Activity</h2></div>
+                        <div class="chart-placeholder">
+                            <div class="bar" style="height: 60%;"><span>Mon</span></div>
+                            <div class="bar" style="height: 80%;"><span>Tue</span></div>
+                            <div class="bar" style="height: 40%;"><span>Wed</span></div>
+                            <div class="bar" style="height: 75%;"><span>Thu</span></div>
+                            <div class="bar" style="height: 90%;"><span>Fri</span></div>
+                            <div class="bar" style="height: 20%;"><span>Sat</span></div>
+                            <div class="bar" style="height: 30%;"><span>Sun</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

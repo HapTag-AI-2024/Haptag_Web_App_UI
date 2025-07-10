@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPTAG AI - New Analysis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <img src="./haptag_logo.png" alt="HAPTAG AI Logo" class="sidebar-logo">
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="home.html"><i class="ph-fill ph-house"></i><span>Home</span></a></li>
+                <li><a href="dashboard.html"><i class="ph-fill ph-chart-line-up"></i><span>Dashboard</span></a></li>
+                <li><a href="index.html" class="active"><i class="ph-fill ph-plus-circle"></i><span>New Analysis</span></a></li>
+                <li><a href="#"><i class="ph-fill ph-gear"></i><span>Settings</span></a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <button id="sidebar-toggle" aria-label="Toggle Sidebar">
+                    <i class="ph ph-caret-double-left"></i>
+                </button>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="page-header">
+                <div class="header-left">
+                    <h1>Start New Analysis Session</h1>
+                </div>
+            </header>
+
+            <div class="flow-step">
+                <div class="step-indicator">Step 1 of 2: Upload Log File</div>
+                
+                <div class="card">
+                    <div class="upload-area">
+                        <i class="ph-fill ph-upload-simple"></i>
+                        <p>Drag and drop your log file here, or</p>
+                        <button class="button-secondary" id="upload-button">Choose File</button>
+                        <span>Accepts .log or .csv files</span>
+                    </div>
+                </div>
+
+                <div class="card" id="progress-card" style="display: none;">
+                    <p>Parsing log file...</p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-inner"></div>
+                    </div>
+                </div>
+
+
+                <div class="card" id="preview-card" style="display: none;">
+                    <div class="card-header">
+                        <h2>Preview Log</h2>
+                    </div>
+                    <div class="table-container">
+                         <table class="anomaly-table preview-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Level</th>
+                                    <th>Component</th>
+                                    <th>Content</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2016-09-28</td>
+                                    <td>04:30:30</td>
+                                    <td>info</td>
+                                    <td>CBS</td>
+                                    <td>Loaded Servicing Stack v6.1.7601.23505 with Core...</td>
+                                </tr>
+                                 <tr>
+                                    <td>2</td>
+                                    <td>2016-09-28</td>
+                                    <td>04:30:31</td>
+                                    <td>info</td>
+                                    <td>CSI</td>
+                                    <td>00000011@2016/9/27:20:30:31.455 WcpInitialize...</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>2016-09-28</td>
+                                    <td>04:30:31</td>
+                                    <td>info</td>
+                                    <td>CBS</td>
+                                    <td>Ending TrustedInstaller initialization.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="page-actions">
+                     <a href="model-selection.html" class="button-primary">Continue to Model Selection <i class="ph ph-arrow-right"></i></a>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
